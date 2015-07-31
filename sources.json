@@ -54,7 +54,6 @@
       "prefix": "src/gl",
       "files": [
         "init.js",
-        "renderer.js",
         "lineFeature.js",
         "pointFeature.js",
         "geomFeature.js",
