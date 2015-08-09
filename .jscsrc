@@ -8,6 +8,7 @@
   "requireCamelCaseOrUpperCaseIdentifiers": null,
   "disallowDanglingUnderscores": null,
   "requireBlocksOnNewline": null,
+  "requireVarDeclFirst": null,
   "excludeFiles": [
     "src/vgl/**",
     "src/util/wigglemaps.js",
