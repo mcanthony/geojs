@@ -268,6 +268,19 @@ geo.layer = function (arg) {
 
     m_initialized = true;
 
+    /// Bind events to handlers
+    m_this.geoOn(geo.event.resize, function (event) {
+      m_this._update({event: event});
+    });
+
+    m_this.geoOn(geo.event.pan, function (event) {
+      m_this._update({event: event});
+    });
+
+    m_this.geoOn(geo.event.zoom, function (event) {
+      m_this._update({event: event});
+    });
+
     return m_this;
   };
 
@@ -277,7 +290,10 @@ geo.layer = function (arg) {
    */
   ////////////////////////////////////////////////////////////////////////////
   this._exit = function () {
-    m_renderer._exit();
+    m_this.geoOff();
+    if (m_renderer) {
+      m_renderer._exit();
+    }
     m_node.off();
     m_node.remove();
     m_node = null;
