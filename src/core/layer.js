@@ -195,6 +195,8 @@ geo.layer = function (arg) {
     //       and maybe respond to events in case the map element moves
     //       around the page.
     m_node.css("position", "absolute");
+    m_node.css("width", "100%");
+    m_node.css("height", "100%");
 
     if (m_map) {
       m_map.node().append(m_node);
