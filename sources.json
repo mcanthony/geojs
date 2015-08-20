@@ -10,6 +10,7 @@
     "geo.core": {
       "prefix": "src/core",
       "files": [
+        "xyz.js",
         "object.js",
         "sceneObject.js",
         "timestamp.js",
