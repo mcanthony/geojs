@@ -183,7 +183,7 @@ geo.jsonReader = function (arg) {
             );
             // polygons not yet supported
             allFeatures.push(m_this._addFeature(
-              'line',
+              type,
               [coordinates],
               style,
               feature.properties
@@ -205,7 +205,7 @@ geo.jsonReader = function (arg) {
             });
 
             allFeatures.push(m_this._addFeature(
-                'line',
+                type,
                 coordinates,
                 style,
                 feature.properties
