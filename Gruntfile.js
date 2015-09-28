@@ -18,6 +18,10 @@ module.exports = function (grunt) {
   sources = grunt.file.readJSON('sources.json');
   port = Number(grunt.option('port') || '8082');
 
+  /* Pass a "--env=<value>" argument to grunt. Default value is "production"
+   * --env=dev enables making source maps. */
+  var environment = grunt.option('env') || 'production';
+
   function moduleFiles(module) {
     var obj, files;
 
@@ -190,7 +194,8 @@ module.exports = function (grunt) {
     concat: {
       geojs: {
         options: {
-          seperator: ''
+          seperator: '',
+          sourceMap: environment === 'dev'
         },
         files: {
           'dist/built/geo.js': sourceList.map(function (f) {
@@ -202,7 +207,8 @@ module.exports = function (grunt) {
 
     uglify: {
       options: {
-        sourceMap: false,
+        sourceMap: environment === 'dev',
+        sourceMapIncludeSources: true,
         report: 'min',
         beautify: {
           ascii_only: true,
