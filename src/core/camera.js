@@ -487,8 +487,8 @@
       this._scale(scale);
 
       // translate to the new center.  Scale these values.
-      translate[0] = (bounds.left + bounds.right) / (bounds.left - bounds.right);
-      translate[1] = (bounds.bottom + bounds.top) / (bounds.bottom - bounds.top);
+      translate[0] = -(bounds.left + bounds.right) / 2;
+      translate[1] = -(bounds.bottom + bounds.top) / 2;
       translate[2] = 0;
       this._translate(translate);
 
